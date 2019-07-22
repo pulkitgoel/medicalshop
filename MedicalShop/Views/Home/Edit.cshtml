@@ -1,0 +1,94 @@
+﻿@model MedicalShop.Models.Medicine
+@{
+    ViewBag.Title = "Edit Medicine";
+}
+
+<h2>Edit</h2>
+
+<table>
+    <tr>
+        <td>
+            @Html.ActionLink("Show All Medicine List", "Index")
+        </td>
+    </tr>
+</table>
+<br />
+@using (Html.BeginForm())
+{
+
+    <table width="100%">
+        <tr>
+            <td colspan="2">
+                @Html.HiddenFor(a => a.ID)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(a => a.Name)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.TextBoxFor(a => a.Name)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(a => a.Brand)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.TextBoxFor(a => a.Brand)
+            </td>
+        </tr>
+        
+<tr>
+            <td>
+                @Html.LabelFor(a => a.Price)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.TextBoxFor(a => a.Price)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(a => a.Quantity)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.TextBoxFor(a => a.Quantity)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(a => a.ExpiryDate)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.TextBoxFor(a => a.ExpiryDate)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input id="Submit1" type="submit" value="Update" />
+            </td>
+        </tr>
+    </table>
+
+}
+@{
+    if (ViewData["resultUpdate"] != "" && ViewData["resultUpdate"] != null)
+    {
+        ViewData["resultUpdate"] = null;
+        <script type="text/javascript" language="javascript">
+        alert("Data Updated Successfully");
+        </script>
+    }
+}
+
+
